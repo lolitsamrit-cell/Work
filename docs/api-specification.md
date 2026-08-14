@@ -1,7 +1,7 @@
 # FitCore Enterprise API Specification (Core v1)
 
 Base path: `/v1`  
-Auth: `Authorization: ****** for protected endpoints  
+Auth: Authorization header required for protected endpoints.
 Tenant scoping: resolved from JWT and validated against requested branch/member resources.
 
 ---
