@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Reviewer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Code Reviewer</h1>
+        <p>Paste code and get quick review feedback.</p>
+      </header>
+
+      <section class="controls">
+        <label for="language">Language</label>
+        <select id="language">
+          <option value="javascript">JavaScript</option>
+          <option value="python">Python</option>
+          <option value="generic">Generic</option>
+        </select>
+        <button id="reviewBtn">Run Review</button>
+      </section>
+
+      <section>
+        <label for="codeInput">Code</label>
+        <textarea
+          id="codeInput"
+          placeholder="Paste your code here..."
+          spellcheck="false"
+        ></textarea>
+      </section>
+
+      <section id="summary" class="summary hidden"></section>
+      <section id="findings" class="findings"></section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

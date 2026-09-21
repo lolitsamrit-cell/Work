@@ -1,0 +1,117 @@
+:root {
+  color-scheme: light dark;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0b1020;
+  color: #e6eaf2;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin-top: 8px;
+  color: #afb9cc;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+select,
+button,
+textarea {
+  border: 1px solid #2d3a55;
+  border-radius: 10px;
+  background: #111a31;
+  color: #e6eaf2;
+  font-size: 0.95rem;
+}
+
+select,
+button {
+  height: 42px;
+  padding: 0 12px;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 600;
+  background: #3b82f6;
+  border: none;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+textarea {
+  width: 100%;
+  min-height: 280px;
+  padding: 12px;
+  resize: vertical;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+.summary {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #0f172a;
+  border: 1px solid #334155;
+}
+
+.hidden {
+  display: none;
+}
+
+.findings {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.finding {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #0f172a;
+}
+
+.severity {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.severity.high {
+  color: #f87171;
+}
+
+.severity.medium {
+  color: #fbbf24;
+}
+
+.severity.low {
+  color: #93c5fd;
+}
