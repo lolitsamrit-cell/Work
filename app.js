@@ -433,14 +433,22 @@ function renderLearningNotes(findings) {
 }
 
 function renderComplexity(complexity) {
-  complexityEl.innerHTML = `
-    <div class="note-item">Language: ${complexity.language.toUpperCase()}</div>
-    <div class="note-item">Loops detected: ${complexity.loopCount}</div>
-    <div class="note-item">Branch statements: ${complexity.branchCount}</div>
-    <div class="note-item">Max indentation: ${complexity.maxIndent} spaces</div>
-    <div class="note-item">Readability estimate: ${complexity.readability}/100</div>
-    <div class="note-item">${complexity.complexityNote}</div>
-  `;
+  complexityEl.innerHTML = "";
+  const notes = [
+    `Language: ${complexity.language.toUpperCase()}`,
+    `Loops detected: ${complexity.loopCount}`,
+    `Branch statements: ${complexity.branchCount}`,
+    `Max indentation: ${complexity.maxIndent} spaces`,
+    `Readability estimate: ${complexity.readability}/100`,
+    complexity.complexityNote,
+  ];
+
+  notes.forEach((text) => {
+    const node = document.createElement("div");
+    node.className = "note-item";
+    node.textContent = text;
+    complexityEl.appendChild(node);
+  });
 }
 
 function loadExample() {
