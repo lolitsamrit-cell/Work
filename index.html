@@ -3,27 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code Reviewer</title>
+    <title>AI Code Reviewer & Corrector</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="container">
       <header>
-        <h1>Code Reviewer</h1>
-        <p>Paste code and get quick review feedback.</p>
+        <h1>AI Code Reviewer & Corrector</h1>
+        <p>Educational analysis with beginner-friendly explanations and suggested improvements.</p>
       </header>
 
-      <section class="controls">
-        <label for="language">Language</label>
-        <select id="language">
-          <option value="javascript">JavaScript</option>
-          <option value="python">Python</option>
-          <option value="generic">Generic</option>
-        </select>
-        <button id="reviewBtn">Run Review</button>
+      <section class="panel controls">
+        <div>
+          <label for="language">Language</label>
+          <select id="language">
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="c">C</option>
+            <option value="cpp">C++</option>
+            <option value="java">Java</option>
+            <option value="generic">Generic</option>
+          </select>
+        </div>
+        <button id="loadExampleBtn" type="button">Load Example</button>
+        <button id="reviewBtn" type="button">Analyze Code</button>
+        <button id="clearBtn" type="button" class="ghost">Clear</button>
       </section>
 
-      <section>
+      <section class="panel">
         <label for="codeInput">Code</label>
         <textarea
           id="codeInput"
@@ -32,8 +39,36 @@
         ></textarea>
       </section>
 
-      <section id="summary" class="summary hidden"></section>
-      <section id="findings" class="findings"></section>
+      <section id="summary" class="panel summary hidden"></section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>Findings</h2>
+          <div id="findings" class="findings"></div>
+        </article>
+        <article class="panel">
+          <h2>Learning Notes</h2>
+          <div id="learningNotes" class="notes"></div>
+          <h2>Complexity & Quality</h2>
+          <div id="complexity" class="notes"></div>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>Original Code</h2>
+          <pre id="originalCode" class="code-box"></pre>
+        </article>
+        <article class="panel">
+          <h2>Suggested Code</h2>
+          <pre id="suggestedCode" class="code-box"></pre>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Analysis History</h2>
+        <ul id="historyList" class="history"></ul>
+      </section>
     </main>
 
     <script src="./app.js"></script>
